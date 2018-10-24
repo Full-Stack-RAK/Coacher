@@ -4,6 +4,7 @@ import { StackNavigator, DrawerNavigator } from "react-navigation";
 
 // Allen's new routes
 import FirstOne from "./screens/firstpage/firstone";
+import FirstTwo from "./screens/firstpage/firsttwo";
 
 import Header from "./screens/Header/";
 import Header1 from "./screens/Header/1";
@@ -167,6 +168,7 @@ const AppNavigator = StackNavigator(
 
     // Allen's new routes elaborated
     FirstOne: { screen: FirstOne },
+    FirstTwo: { screen: FirstTwo },
 
     Header1: { screen: Header1 },
     Header2: { screen: Header2 },

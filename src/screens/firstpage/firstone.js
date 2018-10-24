@@ -26,7 +26,7 @@ class FirstOne extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>Bordered CardItem</Title>
+            <Title>User Page Post-Login</Title>
           </Body>
           <Right />
         </Header>
@@ -43,7 +43,7 @@ class FirstOne extends Component {
                 </Text>
               </Body>
             </CardItem>
-            <CardItem bordered button onPress={() => this.props.navigation.navigate("ProfilePage")}>
+            <CardItem bordered button onPress={() => this.props.navigation.navigate("FirstTwo")}>
               <Body>
                 <Text>
                   1. First button navigates to a Profile page they can edit
@@ -64,8 +64,8 @@ class FirstOne extends Component {
                 </Text>
               </Body>
             </CardItem>
-            <CardItem footer bordered>
-              <Text>User's Info Footer</Text>
+            <CardItem bordered button onPress={() => this.props.navigation.navigate("Home")}>
+              <Text>User's Info Footer. Also this will take you to home page!</Text>
             </CardItem>
           </Card>
         </Content>
