@@ -35,6 +35,12 @@ class Home extends Component {
             >
               <Text>Lets Go!</Text>
             </Button>
+            <Button
+              style={{ backgroundColor: "#6FAF98", alignSelf: "center" }}
+              onPress={() => this.props.navigation.navigate("FixedLabel")}
+            >
+              <Text>Register</Text>
+            </Button>
           </View>
         </ImageBackground>
       </Container>
