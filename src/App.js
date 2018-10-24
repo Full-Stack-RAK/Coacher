@@ -126,7 +126,12 @@ import Actionsheet from "./screens/actionsheet";
 
 const Drawer = DrawerNavigator(
   {
-    Home: { screen: Home },
+    Home: {
+      screen: Home,
+      // navigationOptions: { // Using drawer lock mode here...
+      //   drawerLockMode: "locked-closed"
+      // }
+    },
     Anatomy: { screen: Anatomy },
     Header: { screen: Header },
     Footer: { screen: Footer },
@@ -241,7 +246,7 @@ const AppNavigator = StackNavigator(
     NHListSeparator: { screen: NHListSeparator },
     NHListHeader: { screen: NHListHeader },
     NHListIcon: { screen: NHListIcon },
-    NHListAvatar: { screen: NHListAvatar },
+    NHListAvatar: { screen: NHListAvatar},
     NHListThumbnail: { screen: NHListThumbnail },
 
     BasicListSwipe: { screen: BasicListSwipe },

@@ -4,7 +4,7 @@ import { Container, Button, H3, Text } from "native-base";
 
 import styles from "./styles";
 
-const launchscreenBg = require("../../../assets/RAKs-logo.png");
+const launchscreenBg = require("../../../assets/background.png");
 const launchscreenLogo = require("../../../assets/Coacher-logo2.png");
 
 class Home extends Component {
@@ -13,13 +13,13 @@ class Home extends Component {
       <Container>
         <StatusBar barStyle="light-content" />
         <ImageBackground source={launchscreenBg} style={styles.imageContainer}>
-          <View style={styles.logoContainer}>
+          <View style={{ marginTop: 40 }}>
             <ImageBackground source={launchscreenLogo} style={styles.logo} />
           </View>
           <View
             style={{
               alignItems: "center",
-              marginBottom: 50,
+              marginBottom: 60,
               backgroundColor: "transparent"
             }}
           >
@@ -35,15 +35,12 @@ class Home extends Component {
             >
               <Text>Log in!</Text>
             </Button>
+            
+          </View>
+          <View style={{ marginBottom: 40 }}>
             <Button
               style={{ backgroundColor: "#6FAF70", alignSelf: "center" }}
               onPress={() => this.props.navigation.navigate("InlineLabel")}
-            >
-              <Text>Create a user!</Text>
-            </Button>
-            <Button
-              style={{ backgroundColor: "#6FAF98", alignSelf: "center" }}
-              onPress={() => this.props.navigation.navigate("FixedLabel")}
             >
               <Text>Register</Text>
             </Button>

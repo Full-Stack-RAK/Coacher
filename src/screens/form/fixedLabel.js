@@ -46,11 +46,7 @@ class FixedLabel extends Component {
             </Item>
           </Form>
           <Button block style={{ margin: 15, marginTop: 50 }}
-            onPress={() =>
-              Toast.show({
-                text: "Wrong password!",
-                buttonText: "Okay"  
-              })}
+            onPress={() => this.props.navigation.navigate("NHListAvatar")}
           >
             <Text>Sign In</Text>
           </Button>
