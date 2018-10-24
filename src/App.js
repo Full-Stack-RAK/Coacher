@@ -3,7 +3,15 @@ import { Root } from "native-base";
 import { StackNavigator, DrawerNavigator } from "react-navigation";
 
 // Allen's new routes
+// import express from "express";
+// import mongoose from "mongoose";
+// import axios from "axios";
+// import bodyParser from "body-parser";
+
 import FirstOne from "./screens/firstpage/firstone";
+import FirstTwo from "./screens/firstpage/firsttwo";
+import FirstThree from "./screens/firstpage/firstthree";
+// import FirstFour from "./screens/firstpage/firstfour";
 
 import Header from "./screens/Header/";
 import Header1 from "./screens/Header/1";
@@ -124,6 +132,15 @@ import Segment from "./screens/segment";
 import NHToast from "./screens/toast/";
 import Actionsheet from "./screens/actionsheet";
 
+// Allen's middleware setup
+// const app = express();
+// app.use(bodyParser.urlencoded({
+//   extended: true
+// }));
+// mongoose.connect("mongodb://localhost/Coacher", {
+//   useNewUrlParser: true
+// });
+
 const Drawer = DrawerNavigator(
   {
     Home: {
@@ -172,6 +189,9 @@ const AppNavigator = StackNavigator(
 
     // Allen's new routes elaborated
     FirstOne: { screen: FirstOne },
+    FirstTwo: { screen: FirstTwo },
+    FirstThree: { screen: FirstThree },
+    // FirstFour: { screen: FirstFour },
 
     Header1: { screen: Header1 },
     Header2: { screen: Header2 },

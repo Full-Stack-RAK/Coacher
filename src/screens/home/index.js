@@ -4,7 +4,11 @@ import { Container, Button, H3, Text } from "native-base";
 
 import styles from "./styles";
 
+<<<<<<< HEAD
 const launchscreenBg = require("../../../assets/background.png");
+=======
+const launchscreenBg = require("../../../assets/launchscreen-bg.png");
+>>>>>>> origin/startreadme
 const launchscreenLogo = require("../../../assets/Coacher-logo2.png");
 
 class Home extends Component {
