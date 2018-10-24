@@ -7,8 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="afd5ed2e-332a-4598-95d9-32e3dedac8a3" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/screens/firstpage/firstthree.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/home/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/firstpage/firstone.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/firstpage/firstone.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/firstpage/firsttwo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/firstpage/firsttwo.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,8 +36,18 @@
     <panes>
       <pane id="ProjectPane" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Coacher" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Coacher" type="e9137016:NonAndroidModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">

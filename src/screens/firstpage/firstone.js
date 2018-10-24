@@ -50,14 +50,14 @@ class FirstOne extends Component {
                 </Text>
               </Body>
             </CardItem>
-            <CardItem bordered button onPress={() => this.props.navigation.navigate("CreateBid")}>
+            <CardItem bordered button onPress={() => this.props.navigation.navigate("FirstThree")}>
               <Body>
                 <Text>
                   2. Second button will allow them to route to a create bid page
                 </Text>
               </Body>
             </CardItem>
-            <CardItem bordered button onPress={() => this.props.navigation.navigate("PendingBids")}>
+            <CardItem bordered button onPress={() => this.props.navigation.navigate("FirstFourth")}>
               <Body>
                 <Text>
                   3. Third button will take them to a pending bids page

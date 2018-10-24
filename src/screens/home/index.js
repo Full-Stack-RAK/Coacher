@@ -4,7 +4,7 @@ import { Container, Button, H3, Text } from "native-base";
 
 import styles from "./styles";
 
-const launchscreenBg = require("../../../assets/RAKs-logo.png");
+const launchscreenBg = require("../../../assets/launchscreen-bg.png");
 const launchscreenLogo = require("../../../assets/Coacher-logo2.png");
 
 class Home extends Component {
