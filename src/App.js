@@ -2,6 +2,9 @@ import React from "react";
 import { Root } from "native-base";
 import { StackNavigator, DrawerNavigator } from "react-navigation";
 
+// Allen's new routes
+import FirstOne from "./screens/firstpage/firstone";
+
 import Header from "./screens/Header/";
 import Header1 from "./screens/Header/1";
 import Header2 from "./screens/Header/2";
@@ -161,6 +164,9 @@ const Drawer = DrawerNavigator(
 const AppNavigator = StackNavigator(
   {
     Drawer: { screen: Drawer },
+
+    // Allen's new routes elaborated
+    FirstOne: { screen: FirstOne },
 
     Header1: { screen: Header1 },
     Header2: { screen: Header2 },
