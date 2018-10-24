@@ -13,7 +13,8 @@ import {
   Right,
   Icon,
   Form,
-  Text
+  Text,
+  Toast
 } from "native-base";
 import styles from "./styles";
 
@@ -44,7 +45,13 @@ class FixedLabel extends Component {
               <Input secureTextEntry />
             </Item>
           </Form>
-          <Button block style={{ margin: 15, marginTop: 50 }}>
+          <Button block style={{ margin: 15, marginTop: 50 }}
+            onPress={() =>
+              Toast.show({
+                text: "Wrong password!",
+                buttonText: "Okay"  
+              })}
+          >
             <Text>Sign In</Text>
           </Button>
         </Content>

@@ -23,17 +23,23 @@ class Home extends Component {
               backgroundColor: "transparent"
             }}
           >
-            <H3 style={styles.text}>App to showcase</H3>
+            <H3 style={styles.text}>App to find</H3>
             <View style={{ marginTop: 8 }} />
-            <H3 style={styles.text}>NativeBase components</H3>
+            <H3 style={styles.text}>mentors for all your needs</H3>
             <View style={{ marginTop: 8 }} />
           </View>
           <View style={{ marginBottom: 80 }}>
             <Button
               style={{ backgroundColor: "#6FAF98", alignSelf: "center" }}
-              onPress={() => this.props.navigation.navigate("DrawerOpen")}
+              onPress={() => this.props.navigation.navigate("FixedLabel")}
             >
-              <Text>Lets Go!</Text>
+              <Text>Log in!</Text>
+            </Button>
+            <Button
+              style={{ backgroundColor: "#6FAF70", alignSelf: "center" }}
+              onPress={() => this.props.navigation.navigate("InlineLabel")}
+            >
+              <Text>Create a user!</Text>
             </Button>
           </View>
         </ImageBackground>
