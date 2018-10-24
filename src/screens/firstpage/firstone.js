@@ -15,7 +15,7 @@ import {
 } from "native-base";
 import styles from "./styles";
 
-class NHCardItemBordered extends Component {
+class FirstOne extends Component {
   render() {
     return (
       <Container style={styles.container}>
@@ -34,37 +34,38 @@ class NHCardItemBordered extends Component {
         <Content padder>
           <Card style={styles.mb}>
             <CardItem header bordered>
-              <Text>NativeBase</Text>
+              <Text>Testing page for Users</Text>
             </CardItem>
             <CardItem bordered>
               <Body>
                 <Text>
-                  NativeBase is a free and open source framework that enable
-                  developers to build high-quality mobile apps using React
-                  Native iOS and Android apps with a fusion of ES6.
+                  User's info will be elaborated here and they will have three button options
                 </Text>
               </Body>
             </CardItem>
-            <CardItem bordered>
+            <CardItem bordered button onPress={() => this.props.navigation.navigate("ProfilePage")}>
               <Body>
                 <Text>
-                  NativeBase builds a layer on top of React Native that provides
-                  you with basic set of components for mobile application
-                  development.
+                  1. First button navigates to a Profile page they can edit
                 </Text>
               </Body>
             </CardItem>
-            <CardItem bordered>
+            <CardItem bordered button onPress={() => this.props.navigation.navigate("CreateBid")}>
               <Body>
                 <Text>
-                  Get on the mobile fast track with NativeBase, the
-                  fastest-growing platform and tool set for iOS and Android
-                  development.
+                  2. Second button will allow them to route to a create bid page
+                </Text>
+              </Body>
+            </CardItem>
+            <CardItem bordered button onPress={() => this.props.navigation.navigate("PendingBids")}>
+              <Body>
+                <Text>
+                  3. Third button will take them to a pending bids page
                 </Text>
               </Body>
             </CardItem>
             <CardItem footer bordered>
-              <Text>GeekyAnts</Text>
+              <Text>User's Info Footer</Text>
             </CardItem>
           </Card>
         </Content>
@@ -73,4 +74,4 @@ class NHCardItemBordered extends Component {
   }
 }
 
-export default NHCardItemBordered;
+export default FirstOne;
