@@ -4,7 +4,7 @@ import { Container, Button, H3, Text } from "native-base";
 
 import styles from "./styles";
 
-const launchscreenBg = require("../../../assets/launchscreen-bg.png");
+const launchscreenBg = require("../../../assets/background.png");
 const launchscreenLogo = require("../../../assets/Coacher-logo2.png");
 
 class Home extends Component {
@@ -28,16 +28,16 @@ class Home extends Component {
             <H3 style={styles.text}>Randy Aahkus, Kenny Perkins, and Viet Vo</H3>
             <View style={{ marginTop: 8 }} />
           </View>
-          <View style={{ marginBottom: 80 }}>
-            <Button
-              style={{ backgroundColor: "#6FAF98", alignSelf: "center" }}
-              onPress={() => this.props.navigation.navigate("DrawerOpen")}
-            >
-              <Text>Lets Go!</Text>
-            </Button>
+          <View style={{ marginBottom: 80, margin: 5 }}>
             <Button
               style={{ backgroundColor: "#6FAF98", alignSelf: "center" }}
               onPress={() => this.props.navigation.navigate("FixedLabel")}
+            >
+              <Text>Log in!</Text>
+            </Button>
+            <Button
+              style={{ backgroundColor: "#6FAF70", alignSelf: "center" }}
+              onPress={() => this.props.navigation.navigate("InlineLabel")}
             >
               <Text>Register</Text>
             </Button>

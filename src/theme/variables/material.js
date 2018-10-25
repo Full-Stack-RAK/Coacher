@@ -1,4 +1,4 @@
-import color from "color";
+  import color from "color";
 
 import { Platform, Dimensions, PixelRatio } from "react-native";
 

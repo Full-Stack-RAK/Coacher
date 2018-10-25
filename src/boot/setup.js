@@ -13,9 +13,11 @@ export default class Setup extends Component {
       isReady: false
     };
   }
+
   componentWillMount() {
     this.loadFonts();
   }
+
   async loadFonts() {
     await Expo.Font.loadAsync({
       Roboto: require("native-base/Fonts/Roboto.ttf"),
@@ -24,6 +26,7 @@ export default class Setup extends Component {
     });
     this.setState({ isReady: true });
   }
+
   render() {
     if (!this.state.isReady) {
       return <Expo.AppLoading />;
