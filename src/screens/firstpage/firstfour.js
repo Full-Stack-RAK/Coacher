@@ -1,18 +1,19 @@
-// import React, { Component } from "react";
-// import {
-//   Container,
-//   Header,
-//   Title,
-//   Content,
-//   Button,
-//   Icon,
-//   ListItem,
-//   Text,
-//   Left,
-//   Right,
-//   Body
-// } from "native-base";
-// import styles from "./styles";
+import React, { Component } from "react";
+import {
+  Container,
+  Header,
+  Title,
+  Content,
+  Button,
+  Icon,
+  ListItem,
+  Text,
+  Left,
+  Right,
+  Body,
+  List
+} from "native-base";
+import styles from "./styles";
 // class exampleClass {
 //     constructor(username, name, email, bidMessage, bidDate) {
 //         this.username = username;
@@ -26,32 +27,46 @@
 // const class2 = new exampleClass("KennyUser", "Kenny", "kenny@gmail.com", "Looking for a reliable spotter at the gym", "10/29/2018");
 // let exampleArray =  [class1, class2];
 
-// class NHListHeader extends Component {
-//   render() {
-//     return (
-//       <Container style={styles.container}>
-//         <Header>
-//           <Left>
-//             <Button transparent onPress={() => this.props.navigation.goBack()}>
-//               <Icon name="arrow-back" />
-//             </Button>
-//           </Left>
-//           <Body>
-//             <Title>Pending Bids</Title>
-//           </Body>
-//           <Right />
-//         </Header>
+class NHListHeader extends Component {
+  render() {
+    return (
+      <Container style={styles.container}>
+        <Header>
+          <Left>
+            <Button transparent onPress={() => this.props.navigation.goBack()}>
+              <Icon name="arrow-back" />
+            </Button>
+          </Left>
+          <Body>
+            <Title>Pending Bids</Title>
+          </Body>
+          <Right />
+        </Header>
 
-//         <Content>
+        <Content>
           
-//           <List>
-//               {}
-//           </List>
+          <List>
+              <ListItem itemHeader>
+                <Text>
+                    AllenUser Bid: "Looking for someone to help me with my jumpshot"
+                </Text>
+              </ListItem>
+              <ListItem >
+                <Text>
+                   viet.allen.qvo@gmail.com
+                </Text>
+              </ListItem>
+              <ListItem >
+                <Text>
+                    10/30/2018
+                </Text>
+              </ListItem>
+          </List>
 
-//         </Content>
-//       </Container>
-//     );
-//   }
-// }
+        </Content>
+      </Container>
+    );
+  }
+}
 
-// export default NHListHeader;
+export default NHListHeader;
