@@ -13,10 +13,13 @@ import {
   Right,
   Icon,
   Form,
-  Text
+  Text,
+  ListItem,
+  Radio
 } from "native-base";
 import styles from "./styles";
-import axios from "axios";
+import user from "../../utils/userAPI";
+import mentor from "../../utils/mentorAPI";
 
 class FloatingLabel extends Component {
 
@@ -24,58 +27,45 @@ class FloatingLabel extends Component {
     super();
     this.state = {
       name: "",
-      email: ""
+      email: "",
+      isUser: true,
+      isMentor: false
     };
   }
+  toggleuser() {
+    this.setState({
+      isUser: true,
+      isMentor: false
+    });
+  }
+  togglementor() {
+    this.setState({
+      isUser: false,
+      isMentor: true
+    });
+  }
 
-  clickPost() {
-    var url = 'http://169.234.74.212:3210/api/users'; //use ipv4 address
-    axios.post(url, {
-      name: this.state.name,
-      email: this.state.email
-    })
-      .then(function (response) {
-        console.log(response);
+  handleFormSubmit = event => {
+    event.preventDefault();
+    if (this.state.name && this.state.email && this.state.isUser) {
+      user.saveUser({
+        name: this.state.name,
+        email: this.state.email,
+        date: Date.now
       })
-      .catch(function (error) {
-        console.log(error);
-      });
-    this.state.name = '';
-    this.state.email = '';
-  };
-
-  clickGet() {
-    var url = 'http://169.234.74.212:3210/api/users';
-    axios.get(url)
-      .then((result) => {
-        console.log(result.data);
-        this.setState({
-          name: result.data.name,
-          email: result.data.email
-        })
+        .then(res => console.log(res))
+        .catch(err => console.log(err));
+    }
+    if(this.state.name && this.state.email && this.state.isMentor){
+      mentor.saveMentor({
+        name: this.state.name,
+        email: this.state.email,
+        date: Date.now
       })
+        .then(res => console.log(res))
+        .catch(err => console.log(err));
+    }
   };
-
-  // handleInputChange = event => {
-  //   const { name, value } = event.target;
-  //   this.setState({
-  //     [name]: value
-  //   });
-  // }
-
-  // handleFormSubmit = event => {
-  //   event.preventDefault();
-  //   var url= "http://169.234.65.206:3001/users";
-  //   if (this.state.name && this.state.email) {
-  //     user.saveUser(url, {
-  //       name: this.state.name,
-  //       email: this.state.email,
-  //       date: Date.now
-  //     })
-  //       .then(res => console.log(res))
-  //       .catch(err => console.log(err));
-  //   }
-  // };
 
   render() {
     return (
@@ -93,6 +83,7 @@ class FloatingLabel extends Component {
         </Header>
 
         <Content>
+
           <Form>
             <Item floatingLabel>
               <Label>Username</Label>
@@ -111,13 +102,43 @@ class FloatingLabel extends Component {
               />
             </Item>
           </Form>
-          <Button block style={{ margin: 15, marginTop: 50 }} onPress={this.clickPost.bind(this)}>
+
+          <ListItem
+            selected={this.state.isUser}
+            onPress={() => this.toggleuser()}
+          >
+            <Left>
+              <Text>User</Text>
+            </Left>
+            <Right>
+              <Radio
+                selected={this.state.isUser}
+                onPress={() => this.toggleuser()}
+              />
+            </Right>
+          </ListItem>
+          <ListItem
+            selected={this.state.isMentor}
+            onPress={() => this.togglementor()}
+          >
+            <Left>
+              <Text>Mentor</Text>
+            </Left>
+            <Right>
+              <Radio
+                selected={this.state.isMentor}
+                onPress={() => this.togglementor()}
+              />
+            </Right>
+          </ListItem>
+
+          <Button block style={{ margin: 15, marginTop: 50 }} onPress={this.handleFormSubmit.bind(this)}>
             <Text>Submit</Text>
           </Button>
+
         </Content>
       </Container>
     );
   }
 }
-
 export default FloatingLabel;
