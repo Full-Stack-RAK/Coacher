@@ -43,41 +43,6 @@ class FloatingLabel extends Component {
       mentor: true,
     });
   }
-  clickPost() {
-
-    var url = 'http://192.168.1.182:3210/api/users'; //use ipv4 address
-    axios.post(url, {
-      name: this.state.name,
-      email: this.state.email
-    })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-    this.state.name = '';
-    this.state.email = '';
-  };
-
-  clickGet() {
-    var url = 'http://192.168.1.182:3210/api/users';
-    axios.get(url)
-      .then((result) => {
-        console.log(result.data);
-        this.setState({
-          name: result.data.name,
-          email: result.data.email
-        })
-      })
-  };
-
-  // handleInputChange = event => {
-  //   const { name, value } = event.target;
-  //   this.setState({
-  //     [name]: value
-  //   });
-  // }
 
   handleFormSubmit = event => {
     event.preventDefault();
