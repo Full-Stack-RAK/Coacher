@@ -3,7 +3,7 @@ const userRoutes = require("./user");
 const mentorRoutes = require("./mentor");
 
 
-router.use("/user", userRoutes);
-router.use("/mentor", mentorRoutes);
+router.use("/users", userRoutes);
+router.use("/mentors", mentorRoutes);
 
 module.exports = router;
