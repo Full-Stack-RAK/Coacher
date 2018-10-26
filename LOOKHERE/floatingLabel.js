@@ -28,7 +28,7 @@ class FloatingLabel extends Component {
     this.state = {
       name: "",
       email: "",
-      user1: true,
+      user1: false,
       mentor: false
     };
   }
