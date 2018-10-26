@@ -14,7 +14,8 @@ import {
   Icon,
   Form,
   Text,
-  DatePicker
+  DatePicker,
+  TimePickerAndroid
 } from "native-base";
 import styles from "./styles";
 
@@ -40,8 +41,8 @@ class FixedLabel extends Component {
               <Label>Bid Title:</Label>
               <Input />
             </Item>
-            <Item fixedLabel last>
-              <Label>Date Range:</Label>
+            <Item fixedLabel>
+              <Label>Schedule Date:</Label>
               <DatePicker
                 defaultDate={new Date(2018, 4, 4)}
                 minimumDate={new Date(2018, 1, 1)}
@@ -56,6 +57,10 @@ class FixedLabel extends Component {
                 placeHolderTextStyle={{ color: "#d3d3d3" }}
                 onDateChange={this.setDate}
               />
+            </Item>
+            <Item fixedLabel title="TimePickerAndroid">
+              <Label>Schedule Time:</Label>
+              <Input />
             </Item>
           </Form>
           <Button block style={{ margin: 15, marginTop: 50 }}>
