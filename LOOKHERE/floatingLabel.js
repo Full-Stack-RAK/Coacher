@@ -32,13 +32,13 @@ class FloatingLabel extends Component {
       mentor: false
     };
   }
-  toggleuser() {
+  toggleUser() {
     this.setState({
       user1: true,
       mentor1: false,
     });
   }
-  togglementor() {
+  toggleMentor() {
     this.setState({
       user1: false,
       mentor1: true,
@@ -102,7 +102,7 @@ class FloatingLabel extends Component {
             </Item>
           <ListItem
             selected={this.state.user}
-            onPress={() => this.toggleuser()}
+            onPress={() => this.toggleUser()}
           >
             <Left>
               <Text>User</Text>
@@ -110,13 +110,13 @@ class FloatingLabel extends Component {
             <Right>
               <Radio
                 selected={this.state.user}
-                onPress={() => this.toggleuser()}
+                onPress={() => this.toggleUser()}
               />
             </Right>
           </ListItem>
           <ListItem
             selected={this.state.mentor}
-            onPress={() => this.togglementor()}
+            onPress={() => this.toggleMentor()}
           >
             <Left>
               <Text>Mentor</Text>
@@ -124,7 +124,7 @@ class FloatingLabel extends Component {
             <Right>
               <Radio
                 selected={this.state.mentor}
-                onPress={() => this.togglementor()}
+                onPress={() => this.toggleMentor()}
               />
             </Right>
           </ListItem>
