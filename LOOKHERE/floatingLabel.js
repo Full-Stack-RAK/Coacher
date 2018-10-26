@@ -35,13 +35,13 @@ class FloatingLabel extends Component {
   toggleuser() {
     this.setState({
       user1: true,
-      mentor: false,
+      mentor1: false,
     });
   }
   togglementor() {
     this.setState({
       user1: false,
-      mentor: true,
+      mentor1: true,
     });
   }
 
