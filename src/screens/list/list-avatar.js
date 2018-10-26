@@ -62,6 +62,7 @@ const datas = [
 ];
 
 class NHListAvatar extends Component {
+
   render() {
     return (
       <Container style={styles.container}>

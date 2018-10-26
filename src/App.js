@@ -2,6 +2,17 @@ import React from "react";
 import { Root } from "native-base";
 import { StackNavigator, DrawerNavigator } from "react-navigation";
 
+// Allen's new routes
+// import express from "express";
+// import mongoose from "mongoose";
+// import axios from "axios";
+// import bodyParser from "body-parser";
+
+import FirstOne from "./screens/firstpage/firstone";
+import FirstTwo from "./screens/firstpage/firsttwo";
+import FirstThree from "./screens/firstpage/firstthree";
+// import FirstFour from "./screens/firstpage/firstfour";
+
 import Header from "./screens/Header/";
 import Header1 from "./screens/Header/1";
 import Header2 from "./screens/Header/2";
@@ -121,9 +132,23 @@ import Segment from "./screens/segment";
 import NHToast from "./screens/toast/";
 import Actionsheet from "./screens/actionsheet";
 
+// Allen's middleware setup
+// const app = express();
+// app.use(bodyParser.urlencoded({
+//   extended: true
+// }));
+// mongoose.connect("mongodb://localhost/Coacher", {
+//   useNewUrlParser: true
+// });
+
 const Drawer = DrawerNavigator(
   {
-    Home: { screen: Home },
+    Home: {
+      screen: Home,
+      // navigationOptions: { // Using drawer lock mode here...
+      //   drawerLockMode: "locked-closed"
+      // }
+    },
     Anatomy: { screen: Anatomy },
     Header: { screen: Header },
     Footer: { screen: Footer },
@@ -161,6 +186,12 @@ const Drawer = DrawerNavigator(
 const AppNavigator = StackNavigator(
   {
     Drawer: { screen: Drawer },
+
+    // Allen's new routes elaborated
+    FirstOne: { screen: FirstOne },
+    FirstTwo: { screen: FirstTwo },
+    FirstThree: { screen: FirstThree },
+    // FirstFour: { screen: FirstFour },
 
     Header1: { screen: Header1 },
     Header2: { screen: Header2 },
@@ -235,7 +266,7 @@ const AppNavigator = StackNavigator(
     NHListSeparator: { screen: NHListSeparator },
     NHListHeader: { screen: NHListHeader },
     NHListIcon: { screen: NHListIcon },
-    NHListAvatar: { screen: NHListAvatar },
+    NHListAvatar: { screen: NHListAvatar},
     NHListThumbnail: { screen: NHListThumbnail },
 
     BasicListSwipe: { screen: BasicListSwipe },

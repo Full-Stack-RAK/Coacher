@@ -10,7 +10,7 @@ export default {
   },
   logoContainer: {
     flex: 1,
-    marginTop: deviceHeight / 8,
+    marginTop: deviceHeight / 12,
     marginBottom: 30
   },
   logo: {

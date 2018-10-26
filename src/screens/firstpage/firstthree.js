@@ -14,7 +14,7 @@ import {
   Icon,
   Form,
   Text,
-  Toast
+  DatePicker
 } from "native-base";
 import styles from "./styles";
 
@@ -29,7 +29,7 @@ class FixedLabel extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>Fixed Label</Title>
+            <Title>Bid Creator</Title>
           </Body>
           <Right />
         </Header>
@@ -37,17 +37,28 @@ class FixedLabel extends Component {
         <Content>
           <Form>
             <Item fixedLabel>
-              <Label>Username</Label>
+              <Label>Bid Title:</Label>
               <Input />
             </Item>
             <Item fixedLabel last>
-              <Label>Password</Label>
-              <Input secureTextEntry />
+              <Label>Date Range:</Label>
+              <DatePicker
+                defaultDate={new Date(2018, 4, 4)}
+                minimumDate={new Date(2018, 1, 1)}
+                maximumDate={new Date(2018, 12, 31)}
+                locale={"en"}
+                timeZoneOffsetInMinutes={undefined}
+                modalTransparent={false}
+                animationType={"fade"}
+                androidMode={"default"}
+                placeHolderText="Select date"
+                textStyle={{ color: "green" }}
+                placeHolderTextStyle={{ color: "#d3d3d3" }}
+                onDateChange={this.setDate}
+              />
             </Item>
           </Form>
-          <Button block style={{ margin: 15, marginTop: 50 }}
-            onPress={() => this.props.navigation.navigate("NHListAvatar")}
-          >
+          <Button block style={{ margin: 15, marginTop: 50 }}>
             <Text>Sign In</Text>
           </Button>
         </Content>
