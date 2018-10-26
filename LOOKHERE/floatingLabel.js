@@ -56,7 +56,7 @@ class FloatingLabel extends Component {
         .then(res => console.log(res))
         .catch(err => console.log(err));
     }
-    if(this.state.name && this.state.email && this.state.mentor){
+    if(this.state.name && this.state.email){
       mentor.saveMentor({
         name: this.state.name,
         email: this.state.email,
