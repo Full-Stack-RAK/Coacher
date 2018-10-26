@@ -16,8 +16,67 @@ import {
   Text
 } from "native-base";
 import styles from "./styles";
+import axios from "axios";
 
 class FloatingLabel extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      name: "",
+      email: ""
+    };
+  }
+
+  clickPost() {
+    var url = 'http://192.168.1.182:3210/api/users'; //use ipv4 address
+    axios.post(url, {
+      name: this.state.name,
+      email: this.state.email
+    })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    this.state.name = '';
+    this.state.email = '';
+  };
+
+  clickGet() {
+    var url = 'http://192.168.1.182:3210/api/users';
+    axios.get(url)
+      .then((result) => {
+        console.log(result.data);
+        this.setState({
+          name: result.data.name,
+          email: result.data.email
+        })
+      })
+  };
+
+  // handleInputChange = event => {
+  //   const { name, value } = event.target;
+  //   this.setState({
+  //     [name]: value
+  //   });
+  // }
+
+  // handleFormSubmit = event => {
+  //   event.preventDefault();
+  //   var url= "http://169.234.65.206:3001/users";
+  //   if (this.state.name && this.state.email) {
+  //     user.saveUser(url, {
+  //       name: this.state.name,
+  //       email: this.state.email,
+  //       date: Date.now
+  //     })
+  //       .then(res => console.log(res))
+  //       .catch(err => console.log(err));
+  //   }
+  // };
+
   render() {
     return (
       <Container style={styles.container}>
@@ -37,15 +96,23 @@ class FloatingLabel extends Component {
           <Form>
             <Item floatingLabel>
               <Label>Username</Label>
-              <Input />
+              <Input
+                value={this.state.name}
+                onChangeText={(name) => this.setState({ name })}
+                // name="name"
+              />
             </Item>
             <Item floatingLabel last>
-              <Label>Password</Label>
-              <Input secureTextEntry />
+              <Label>E-mail</Label>
+              <Input
+                value={this.state.email}
+                onChangeText={(email) => this.setState({ email })}
+                // name="email"
+              />
             </Item>
           </Form>
-          <Button block style={{ margin: 15, marginTop: 50 }}>
-            <Text>Sign In</Text>
+          <Button block style={{ margin: 15, marginTop: 50 }} onPress={this.clickPost.bind(this)}>
+            <Text>Submit</Text>
           </Button>
         </Content>
       </Container>
