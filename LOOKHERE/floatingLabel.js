@@ -29,7 +29,7 @@ class FloatingLabel extends Component {
       name: "",
       email: "",
       user1: false,
-      mentor: false
+      mentor1: false
     };
   }
   toggleUser() {
