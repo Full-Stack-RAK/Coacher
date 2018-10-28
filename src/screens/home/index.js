@@ -10,9 +10,9 @@ const launchscreenLogo = require("../../../assets/Coacher-logo2.png");
 class Home extends Component {
   render() {
     return (
-      <Container>
+      <Container style={styles.backgroundColor}>
         <StatusBar barStyle="light-content" />
-        <ImageBackground source={launchscreenBg} style={styles.imageContainer}>
+        {/* <ImageBackground style={styles.imageContainer}> */}
           <View style={styles.logoContainer}>
             <ImageBackground source={launchscreenLogo} style={styles.logo} />
           </View>
@@ -42,7 +42,7 @@ class Home extends Component {
               <Text>Register</Text>
             </Button>
           </View>
-        </ImageBackground>
+        {/* </ImageBackground> */}
       </Container>
     );
   }
