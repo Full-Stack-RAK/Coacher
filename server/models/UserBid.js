@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const mentorSchema = new Schema({
+const userBidSchema = new Schema({
   name: { type: String, required: true },
   email: { type: String, required: true },
   datePosted: { type: Date, default: Date.now},
@@ -9,6 +9,6 @@ const mentorSchema = new Schema({
   address:{type: String, required: true}
 });
 
-const Mentor = mongoose.model("Mentor", mentorSchema);
+const UserBid = mongoose.model("UserBid", userBidSchema);
 
-module.exports = Mentor;
+module.exports = UserBid;
