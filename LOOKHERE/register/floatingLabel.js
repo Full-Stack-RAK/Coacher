@@ -28,20 +28,20 @@ class FloatingLabel extends Component {
     this.state = {
       name: "",
       email: "",
-      user1: true,
-      mentor: false
+      user1: false,
+      mentor1: false
     };
   }
-  toggleuser() {
+  toggleUser() {
     this.setState({
       user1: true,
-      mentor: false,
+      mentor1: false,
     });
   }
-  togglementor() {
+  toggleMentor() {
     this.setState({
       user1: false,
-      mentor: true,
+      mentor1: true,
     });
   }
 
@@ -56,7 +56,7 @@ class FloatingLabel extends Component {
         .then(res => console.log(res))
         .catch(err => console.log(err));
     }
-    if(this.state.name && this.state.email && this.state.mentor){
+    if(this.state.name && this.state.email){
       mentor.saveMentor({
         name: this.state.name,
         email: this.state.email,
@@ -102,7 +102,7 @@ class FloatingLabel extends Component {
             </Item>
           <ListItem
             selected={this.state.user}
-            onPress={() => this.toggleuser()}
+            onPress={() => this.toggleUser()}
           >
             <Left>
               <Text>User</Text>
@@ -110,13 +110,13 @@ class FloatingLabel extends Component {
             <Right>
               <Radio
                 selected={this.state.user}
-                onPress={() => this.toggleuser()}
+                onPress={() => this.toggleUser()}
               />
             </Right>
           </ListItem>
           <ListItem
             selected={this.state.mentor}
-            onPress={() => this.togglementor()}
+            onPress={() => this.toggleMentor()}
           >
             <Left>
               <Text>Mentor</Text>
@@ -124,7 +124,7 @@ class FloatingLabel extends Component {
             <Right>
               <Radio
                 selected={this.state.mentor}
-                onPress={() => this.togglementor()}
+                onPress={() => this.toggleMentor()}
               />
             </Right>
           </ListItem>
