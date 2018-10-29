@@ -14,6 +14,6 @@ export default {
     return axios.delete(url + id);
   },
   saveUserBid: function(userData) {
-    return axios.post(url, userData)
+    return axios.post(url, userData);
   }
 };
