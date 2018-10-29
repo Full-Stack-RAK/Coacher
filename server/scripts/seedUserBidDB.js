@@ -12,9 +12,18 @@ const userBidSeed = [
     name: "Kenny",
     email: "kenster@gmail.com",
     datePosted: new Date(Date.now()),
-    bidTitle: "Soccer",
+    bidTitle: "Soccer Coach",
     dateRequested: new Date(Date.now()),
     address: "Park",
+    UserID: "5bd754800a23b156885a0452"
+  },
+  {
+    name: "Kenny",
+    email: "kenster@gmail.com",
+    datePosted: new Date(Date.now()),
+    bidTitle: "Tennis Coach",
+    dateRequested: new Date(Date.now()),
+    address: "Tennis courts",
     UserID: "5bd754800a23b156885a0452"
   }
 ];
