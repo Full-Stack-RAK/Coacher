@@ -23,11 +23,6 @@ const cardImage = require("../../../assets/drawer-cover.png");
 
 class NHCardShowcase extends Component {
 
-  constructor(props) {
-    super(props);
-    this.params = this.props.navigation.state.params;
-  }
-
   render() {
     return (
       <Container style={styles.container}>

@@ -26,7 +26,7 @@ class FloatingLabel extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "Guest",
+      name: "",
       email: "",
       isUser: true,
       isMentor: false

@@ -44,7 +44,7 @@ render() {
           style={{ backgroundColor: "#6FAF98", alignSelf: "center" }}
           onPress={() => this.props.navigation.navigate("FixedLabel")}
         >
-          <Text>Log in!</Text>
+          <Text>Log in</Text>
         </Button>
         <Button
           style={{ backgroundColor: "#6FAF70", alignSelf: "center" }}
