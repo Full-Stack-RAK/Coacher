@@ -16,6 +16,7 @@ import {
 import styles from "./styles";
 
 class FirstOne extends Component {
+
   render() {
     return (
       <Container style={styles.container}>
@@ -26,7 +27,7 @@ class FirstOne extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>User Page Post-Login</Title>
+            <Title>Welcome User</Title>
           </Body>
           <Right />
         </Header>
@@ -46,26 +47,26 @@ class FirstOne extends Component {
             <CardItem bordered button onPress={() => this.props.navigation.navigate("FirstTwo")}>
               <Body>
                 <Text>
-                  1. First button navigates to a Profile page they can edit
+                  My Profile
                 </Text>
               </Body>
             </CardItem>
             <CardItem bordered button onPress={() => this.props.navigation.navigate("FirstThree")}>
               <Body>
                 <Text>
-                  2. Second button will allow them to route to a create bid page
+                  Create a Mentoring Request
                 </Text>
               </Body>
             </CardItem>
-            <CardItem bordered button onPress={() => this.props.navigation.navigate("FirstFourth")}>
+            <CardItem bordered button onPress={() => this.props.navigation.navigate("FirstFour")}>
               <Body>
                 <Text>
-                  3. Third button will take them to a pending bids page
+                  Pending Requests
                 </Text>
               </Body>
             </CardItem>
             <CardItem bordered button onPress={() => this.props.navigation.navigate("Home")}>
-              <Text>User's Info Footer. Also this will take you to home page!</Text>
+              <Text>Home</Text>
             </CardItem>
           </Card>
         </Content>

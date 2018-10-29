@@ -29,7 +29,7 @@ class FixedLabel extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>Fixed Label</Title>
+            <Title>Login</Title>
           </Body>
           <Right />
         </Header>
@@ -41,12 +41,14 @@ class FixedLabel extends Component {
               <Input />
             </Item>
             <Item fixedLabel last>
-              <Label>Password</Label>
-              <Input secureTextEntry />
+              <Label>E-mail</Label>
+              <Input 
+              // secureTextEntry 
+              />
             </Item>
           </Form>
           <Button block style={{ margin: 15, marginTop: 50 }}
-            onPress={() => this.props.navigation.navigate("NHListAvatar")}
+            onPress={() => this.props.navigation.navigate("FirstOne")}
           >
             <Text>Sign In</Text>
           </Button>

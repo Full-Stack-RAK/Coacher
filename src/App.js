@@ -11,7 +11,7 @@ import { StackNavigator, DrawerNavigator } from "react-navigation";
 import FirstOne from "./screens/firstpage/firstone";
 import FirstTwo from "./screens/firstpage/firsttwo";
 import FirstThree from "./screens/firstpage/firstthree";
-// import FirstFour from "./screens/firstpage/firstfour";
+import FirstFour from "./screens/firstpage/firstfour";
 
 import Header from "./screens/Header/";
 import Header1 from "./screens/Header/1";
@@ -191,7 +191,7 @@ const AppNavigator = StackNavigator(
     FirstOne: { screen: FirstOne },
     FirstTwo: { screen: FirstTwo },
     FirstThree: { screen: FirstThree },
-    // FirstFour: { screen: FirstFour },
+    FirstFour: { screen: FirstFour },
 
     Header1: { screen: Header1 },
     Header2: { screen: Header2 },
