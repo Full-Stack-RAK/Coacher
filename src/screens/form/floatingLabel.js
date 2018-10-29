@@ -23,15 +23,16 @@ import mentor from "../../utils/mentorAPI";
 
 class FloatingLabel extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      name: "",
+      name: "Guest",
       email: "",
       isUser: true,
       isMentor: false
     };
   }
+
   toggleuser() {
     this.setState({
       isUser: true,
@@ -56,7 +57,7 @@ class FloatingLabel extends Component {
         .then(res => console.log(res))
         .catch(err => console.log(err));
     }
-    if(this.state.name && this.state.email && this.state.isMentor){
+    if (this.state.name && this.state.email && this.state.isMentor) {
       mentor.saveMentor({
         name: this.state.name,
         email: this.state.email,
@@ -77,7 +78,7 @@ class FloatingLabel extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>Floating Label</Title>
+            <Title>Register</Title>
           </Body>
           <Right />
         </Header>
@@ -90,7 +91,7 @@ class FloatingLabel extends Component {
               <Input
                 value={this.state.name}
                 onChangeText={(name) => this.setState({ name })}
-                // name="name"
+              // name="name"
               />
             </Item>
             <Item floatingLabel last>
@@ -98,7 +99,7 @@ class FloatingLabel extends Component {
               <Input
                 value={this.state.email}
                 onChangeText={(email) => this.setState({ email })}
-                // name="email"
+              // name="email"
               />
             </Item>
           </Form>

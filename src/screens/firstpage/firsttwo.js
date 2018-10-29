@@ -22,6 +22,12 @@ const logo = require("../../../assets/logo.png");
 const cardImage = require("../../../assets/drawer-cover.png");
 
 class NHCardShowcase extends Component {
+
+  constructor(props) {
+    super(props);
+    this.params = this.props.navigation.state.params;
+  }
+
   render() {
     return (
       <Container style={styles.container}>
@@ -64,7 +70,7 @@ class NHCardShowcase extends Component {
                 <Text>
                   Here some lorem ipsum about the user would be listed.
                   We could list some of their information is some manner here.
-                  For instance: address, phone number, or category of sport. 
+                  For instance: address, phone number, or category of sport.
                 </Text>
               </Body>
             </CardItem>
