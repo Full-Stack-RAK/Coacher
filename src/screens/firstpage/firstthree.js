@@ -14,8 +14,7 @@ import {
   Icon,
   Form,
   Text,
-  DatePicker,
-  TimePickerAndroid
+  DatePicker
 } from "native-base";
 import styles from "./styles";
 import userBid from "../../utils/userBidAPI";
@@ -42,7 +41,7 @@ class FixedLabel extends Component {
         email: this.state.email,
         bidTitle: this.state.userBidTitle,
         address: this.state.address,
-        userID: this.state.userBidTitle,
+        userID: this.state.signedInID,
         dateRequested: this.state
       })
         .then(res => console.log(res))
@@ -77,10 +76,11 @@ class FixedLabel extends Component {
             <Item fixedLabel>
               <Label>Schedule Date:</Label>
               <DatePicker
-                defaultDate={new Date(2018, 4, 4)}
+                defaultDate={new Date(2018, 10, 30)}
                 minimumDate={new Date(2018, 1, 1)}
-                maximumDate={new Date(2018, 12, 31)}
+                maximumDate={new Date(2019, 12, 31)}
                 locale={"en"}
+                minuteInterval={15}
                 timeZoneOffsetInMinutes={undefined}
                 modalTransparent={false}
                 animationType={"fade"}

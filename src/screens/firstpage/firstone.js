@@ -65,6 +65,13 @@ class FirstOne extends Component {
                 </Text>
               </Body>
             </CardItem>
+            <CardItem bordered button onPress={() => this.props.navigation.navigate("FirstFive")}>
+              <Body>
+                <Text>
+                  Map
+                </Text>
+              </Body>
+            </CardItem>
             <CardItem bordered button onPress={() => this.props.navigation.navigate("Home")}>
               <Text>Home</Text>
             </CardItem>
