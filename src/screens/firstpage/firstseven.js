@@ -34,12 +34,11 @@ class FirstSix extends Component {
   };
 
   acceptBid() {
-      mentorbids.updateMentorBid(this.props.navigation.state.params.itemID, { userAccepted: true })
-      .then(res => console.log(this.state))
+      mentorbids.updateMentorBid({ userAccepted: true })
   }
 
   render() {
-    
+
     console.log(this.state)
 
     return (
