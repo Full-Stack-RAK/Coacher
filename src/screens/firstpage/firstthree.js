@@ -42,7 +42,7 @@ class FixedLabel extends Component {
         bidTitle: this.state.userBidTitle,
         address: this.state.address,
         userID: this.state.signedInID,
-        dateRequested: this.state
+        dateRequested: this.state.dateRequested
       })
         .then(res => console.log(res))
         .catch(err => console.log(err));

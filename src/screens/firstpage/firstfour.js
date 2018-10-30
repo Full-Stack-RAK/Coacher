@@ -1,5 +1,6 @@
-import React from "react";
-import { Container,
+import React, { Component } from "react";
+import {
+  Container,
   Header,
   Title,
   Content,
@@ -9,11 +10,32 @@ import { Container,
   Text,
   Left,
   Right,
-  Body } from "expo";
-import styles from "../anatomy/styles";
+  Body,
+  List
+} from "native-base";
+import styles from "./styles";
+import mentorbids from "../../utils/mentorBidAPI";
 
-export default class FirstFour extends React.Component {
+class FirstFour extends Component {
+
+  state = {
+    mentorBidData: []
+  }
+
+  componentDidMount() {
+    this.callMentorBids();
+  }
+
+  callMentorBids() {
+    mentorbids.getMentorBids()
+      .then(res => this.setState({ mentorBidData: res.data }))
+      .catch(err => console.log(err));
+  };
+
   render() {
+
+    console.log(this.state)
+
     return (
       <Container style={styles.container}>
         <Header>
@@ -29,20 +51,29 @@ export default class FirstFour extends React.Component {
         </Header>
 
         <Content>
-          <ListItem itemDivider>
-            <Text>Bid Title</Text>
-          </ListItem>
-          <ListItem>
-            <Text>Scheduled Date</Text>
-          </ListItem>
-          <ListItem>
-            <Text>Scheduled Time</Text>
-          </ListItem>
-          <ListItem last>
-            <Text>Location</Text>
-          </ListItem>
+          <List>
+            {this.state.mentorBidData.map(bid => (
+              <ListItem key={bid._id}>
+                <Left>
+                  <Text>
+                    {bid.name}
+                  </Text>
+                  <Text>
+                    {bid.email}
+                  </Text>
+                </Left>
+                <Right>
+                  <Text>
+                    date posted: {Date(bid.dateBid)}
+                  </Text>
+                </Right>
+              </ListItem>
+            ))}
+          </List>
         </Content>
       </Container>
     );
   }
 }
+
+export default FirstFour;
