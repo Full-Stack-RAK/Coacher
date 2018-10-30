@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { FlatList } from "react-native";
 import {
   Container,
   Header,
@@ -11,28 +10,32 @@ import {
   Text,
   Left,
   Right,
-  Body
+  Body,
+  List
 } from "native-base";
 import styles from "./styles";
+import mentorbids from "../../utils/mentorBidAPI";
 
-const datas = [
-  "Simon Mignolet",
-  "Nathaniel Clyne",
-  "Dejan Lovren",
-  "Mama Sakho",
-  "Alberto Moreno",
-  "Emre Can",
-  "Joe Allen",
-  "Phil Coutinho"
-];
+class FirstFour extends Component {
 
-class NHListItemSelected extends Component {
-  state = {
-    datas,
-    selected: "Simon Mignolet"
+  state ={
+    mentorBidData: []
+  }
+
+  componentDidMount() {
+    this.callMentorBids();
+  }
+
+  callMentorBids() {
+    mentorbids.getMentorBids()
+      .then(res => this.setState({ mentorBidData: res.data }))
+      .catch(err => console.log(err));
   };
 
   render() {
+
+    console.log(this.state)
+
     return (
       <Container style={styles.container}>
         <Header>
@@ -42,37 +45,25 @@ class NHListItemSelected extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>List Item Selected</Title>
+            <Title>User Bids</Title>
           </Body>
           <Right />
         </Header>
+
         <Content>
-          <FlatList
-            data={this.state.datas}
-            extraData={this.state}
-            keyExtractor={(item, index) => String(index)}
-            renderItem={({ item, index }) => {
-              return (
-                <ListItem
-                  selected={this.state.selected === item}
-                  onPress={() => this.setState({ selected: item })}
-                >
-                  <Left>
-                    <Text>
-                      {item}
-                    </Text>
-                  </Left>
-                  <Right>
-                    <Icon name="arrow-forward" />
-                  </Right>
-                </ListItem>
-              );
-            }}
-          />
+          <List>
+            {this.state.mentorBidData.map(bid => (
+              <ListItem key={bid._id}>
+                <Text>
+                  {bid.name} : {bid.email}
+                </Text>
+              </ListItem>
+            ))}
+          </List>
         </Content>
       </Container>
     );
   }
 }
 
-export default NHListItemSelected;
+export default FirstFour;
