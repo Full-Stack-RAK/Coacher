@@ -17,7 +17,6 @@ export default {
   deleteMentorBid: function(id) {
     return axios.delete(url + "/" + id);
   },
-
   saveMentorBid: function(mentorData) {
     return axios.post(url, mentorData);
   }

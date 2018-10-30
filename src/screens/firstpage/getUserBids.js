@@ -14,6 +14,8 @@ import {
   Body
 } from "native-base";
 import styles from "./styles";
+import db from "../../utils/userBidAPI";
+
 
 const datas = [
   "Simon Mignolet",
@@ -53,9 +55,6 @@ class NHListItemSelected extends Component {
             keyExtractor={(item, index) => String(index)}
             renderItem={({ item, index }) => {
               return (
-                console.log(item),
-                console.log(index),
-              
                 <ListItem
                   selected={this.state.selected === item}
                   onPress={() => this.setState({ selected: item })}

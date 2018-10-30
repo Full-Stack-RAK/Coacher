@@ -18,7 +18,7 @@ import mentorbids from "../../utils/mentorBidAPI";
 
 class FirstFour extends Component {
 
-  state = {
+  state ={
     mentorBidData: []
   }
 
@@ -45,7 +45,7 @@ class FirstFour extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>Mentor Bids</Title>
+            <Title>User Bids</Title>
           </Body>
           <Right />
         </Header>
@@ -53,20 +53,10 @@ class FirstFour extends Component {
         <Content>
           <List>
             {this.state.mentorBidData.map(bid => (
-              <ListItem
-                key={bid._id}
-                onPress={() => this.props.navigation.navigate("FirstSix", { itemID: bid._id} )}
-              >
-                <Left>
-                  <Text>
-                    {bid.name} : {bid.email}
-                  </Text>
-                </Left>
-                <Right>
-                  <Text>
-                    {Date(bid.dateBid)}
-                  </Text>
-                </Right>
+              <ListItem key={bid._id}>
+                <Text>
+                  {bid.name} : {bid.email}
+                </Text>
               </ListItem>
             ))}
           </List>

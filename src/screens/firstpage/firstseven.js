@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+  button,
   Container,
   Header,
   Title,
@@ -16,10 +17,10 @@ import {
 import styles from "./styles";
 import mentorbids from "../../utils/mentorBidAPI";
 
-class FirstFour extends Component {
+class FirstSix extends Component {
 
   state = {
-    mentorBidData: []
+    mentorBidData: {}
   }
 
   componentDidMount() {
@@ -27,10 +28,14 @@ class FirstFour extends Component {
   }
 
   callMentorBids() {
-    mentorbids.getMentorBids()
+    mentorbids.getMentorBid(this.props.navigation.state.params.itemID)
       .then(res => this.setState({ mentorBidData: res.data }))
       .catch(err => console.log(err));
   };
+
+  acceptBid() {
+      mentorbids.updateMentorBid({ userAccepted: true })
+  }
 
   render() {
 
@@ -38,42 +43,42 @@ class FirstFour extends Component {
 
     return (
       <Container style={styles.container}>
-        <Header>
+        <Header>             
           <Left>
             <Button transparent onPress={() => this.props.navigation.goBack()}>
               <Icon name="arrow-back" />
             </Button>
           </Left>
-          <Body>
-            <Title>Mentor Bids</Title>
+          <Body >
+            <Title>Mentor Bid</Title>
           </Body>
           <Right />
         </Header>
 
         <Content>
-          <List>
-            {this.state.mentorBidData.map(bid => (
-              <ListItem
-                key={bid._id}
-                onPress={() => this.props.navigation.navigate("FirstSix", { itemID: bid._id} )}
-              >
-                <Left>
+        <Left>
                   <Text>
-                    {bid.name} : {bid.email}
+                    Name: {this.state.mentorBidData.name}   Email:    {this.state.mentorBidData.email}
                   </Text>
                 </Left>
                 <Right>
                   <Text>
-                    {Date(bid.dateBid)}
+                    Posted: {Date(this.state.mentorBidData.datebid)}
                   </Text>
+                  <Button onPress={() => this.acceptBid()}>
+                  <Text> Accept</Text>
+                  </Button>
                 </Right>
-              </ListItem>
-            ))}
-          </List>
+                
+               
+                  
+     
         </Content>
+ 
       </Container>
+  
     );
   }
 }
 
-export default FirstFour;
+export default FirstSix;
