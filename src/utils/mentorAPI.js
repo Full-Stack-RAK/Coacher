@@ -13,6 +13,7 @@ export default {
   deleteMentor: function(id) {
     return axios.delete(url + "/" + id);
   },
+
   saveMentor: function(mentorData) {
     return axios.post(url, mentorData);
   }

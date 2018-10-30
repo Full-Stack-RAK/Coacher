@@ -18,7 +18,7 @@ import mentorbids from "../../utils/mentorBidAPI";
 
 class FirstFour extends Component {
 
-  state ={
+  state = {
     mentorBidData: []
   }
 
@@ -54,9 +54,25 @@ class FirstFour extends Component {
           <List>
             {this.state.mentorBidData.map(bid => (
               <ListItem key={bid._id}>
+<<<<<<< HEAD
                 <Text>
                   {bid.name} : {bid.email}
                 </Text>
+=======
+                <Left>
+                  <Text>
+                    {bid.name}
+                  </Text>
+                  <Text>
+                    {bid.email}
+                  </Text>
+                </Left>
+                <Right>
+                  <Text>
+                    date posted: {Date(bid.dateBid)}
+                  </Text>
+                </Right>
+>>>>>>> origin/ken
               </ListItem>
             ))}
           </List>
@@ -66,4 +82,8 @@ class FirstFour extends Component {
   }
 }
 
+<<<<<<< HEAD
 export default FirstFour;
+=======
+export default FirstFour;
+>>>>>>> origin/ken

@@ -54,7 +54,7 @@ class FloatingLabel extends Component {
         email: this.state.email,
         date: Date.now
       })
-        .then(res => console.log(res))
+        .then(() => this.props.navigation.navigate("FixedLabel"))
         .catch(err => console.log(err));
     }
     if (this.state.name && this.state.email && this.state.isMentor) {
@@ -63,7 +63,7 @@ class FloatingLabel extends Component {
         email: this.state.email,
         date: Date.now
       })
-        .then(res => console.log(res))
+        .then(() => this.props.navigation.navigate("FixedLabel"))
         .catch(err => console.log(err));
     }
   };
