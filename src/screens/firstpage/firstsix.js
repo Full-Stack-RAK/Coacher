@@ -42,7 +42,7 @@ class FirstSix extends Component {
 
     return (
       <Container style={styles.container}>
-        <Header>
+        <Header>             
           <Left>
             <Button transparent onPress={() => this.props.navigation.goBack()}>
               <Icon name="arrow-back" />

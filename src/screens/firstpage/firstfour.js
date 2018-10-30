@@ -11,30 +11,30 @@ import {
   Left,
   Right,
   Body,
-  FlatList
+  List
 } from "native-base";
 import styles from "./styles";
-// import mentorbids from "../../utils/mentorBidAPI";
+import mentorbids from "../../utils/mentorBidAPI";
 
 class FirstFour extends Component {
 
   state = {
-    mentorBidData: [],
-    selected: ""
+    mentorBidData: []
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.callMentorBids();
   }
 
-  callMentorBids = async () => {
-  const response = await fetch("http://192.168.1.123:3210/api/mentorBid");
-  const json = await response.json();
-  this.setState({mentorBidData: json})
+  callMentorBids() {
+    mentorbids.getMentorBids()
+      .then(res => this.setState({ mentorBidData: res.data }))
+      .catch(err => console.log(err));
   };
 
   render() {
 
+    console.log(this.state)
 
     return (
       <Container style={styles.container}>
@@ -68,9 +68,8 @@ class FirstFour extends Component {
                   </Text>
                 </Right>
               </ListItem>
-              );
-            }}
-          />
+            ))}
+          </List>
         </Content>
       </Container>
     );
