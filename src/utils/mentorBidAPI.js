@@ -13,11 +13,6 @@ export default {
   deleteMentorBid: function(id) {
     return axios.delete(url + "/" + id);
   },
-<<<<<<< HEAD
-  
-=======
-
->>>>>>> origin/ken
   saveMentorBid: function(mentorData) {
     return axios.post(url, mentorData);
   }

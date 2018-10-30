@@ -11,30 +11,30 @@ import {
   Left,
   Right,
   Body,
-  List
+  FlatList
 } from "native-base";
 import styles from "./styles";
-import mentorbids from "../../utils/mentorBidAPI";
+// import mentorbids from "../../utils/mentorBidAPI";
 
 class FirstFour extends Component {
 
   state = {
-    mentorBidData: []
+    mentorBidData: [],
+    selected: ""
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.callMentorBids();
   }
 
-  callMentorBids() {
-    mentorbids.getMentorBids()
-      .then(res => this.setState({ mentorBidData: res.data }))
-      .catch(err => console.log(err));
+  callMentorBids = async () => {
+  const response = await fetch("http://192.168.1.123:3210/api/mentorBid");
+  const json = await response.json();
+  this.setState({mentorBidData: json})
   };
 
   render() {
 
-    console.log(this.state)
 
     return (
       <Container style={styles.container}>
@@ -51,39 +51,35 @@ class FirstFour extends Component {
         </Header>
 
         <Content>
-          <List>
-            {this.state.mentorBidData.map(bid => (
-              <ListItem key={bid._id}>
-<<<<<<< HEAD
-                <Text>
-                  {bid.name} : {bid.email}
-                </Text>
-=======
+        <FlatList
+            data={this.state.mentorBidData}
+            extraData={this.state}
+            keyExtractor={(item, index) => String(index)}
+            renderItem={({ item, index }) => {
+              return (
+  
+                <ListItem
+                  selected={this.state.selected === item}
+                  onPress={() => this.setState({ selected: item })}
+                >
                 <Left>
                   <Text>
-                    {bid.name}
-                  </Text>
-                  <Text>
-                    {bid.email}
+                    {`${item.name} : ${item.email} `}
                   </Text>
                 </Left>
                 <Right>
                   <Text>
-                    date posted: {Date(bid.dateBid)}
+                    { `Date ${item.dateBid}` }
                   </Text>
                 </Right>
->>>>>>> origin/ken
               </ListItem>
-            ))}
-          </List>
+              );
+            }}
+          />
         </Content>
       </Container>
     );
   }
 }
 
-<<<<<<< HEAD
 export default FirstFour;
-=======
-export default FirstFour;
->>>>>>> origin/ken
