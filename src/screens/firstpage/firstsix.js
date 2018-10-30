@@ -16,10 +16,10 @@ import {
 import styles from "./styles";
 import mentorbids from "../../utils/mentorBidAPI";
 
-class FirstFour extends Component {
+class FirstSix extends Component {
 
   state = {
-    mentorBidData: []
+    mentorBidData: {}
   }
 
   componentDidMount() {
@@ -27,10 +27,14 @@ class FirstFour extends Component {
   }
 
   callMentorBids() {
-    mentorbids.getMentorBids()
+    mentorbids.getMentorBid(this.props)
       .then(res => this.setState({ mentorBidData: res.data }))
       .catch(err => console.log(err));
   };
+
+  acceptBid() {
+      mentorbids.updateMentorBid({ userAccepted: true })
+  }
 
   render() {
 
@@ -45,35 +49,17 @@ class FirstFour extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>Mentor Bids</Title>
+            <Title>Mentor Bid</Title>
           </Body>
           <Right />
         </Header>
 
         <Content>
-          <List>
-            {this.state.mentorBidData.map(bid => (
-              <ListItem
-                key={bid._id}
-                onPress={() => this.props.navigation.navigate("FirstSix")}
-              >
-                <Left>
-                  <Text>
-                    {bid.name} : {bid.email}
-                  </Text>
-                </Left>
-                <Right>
-                  <Text>
-                    {Date(bid.dateBid)}
-                  </Text>
-                </Right>
-              </ListItem>
-            ))}
-          </List>
+          
         </Content>
       </Container>
     );
   }
 }
 
-export default FirstFour;
+export default FirstSix;

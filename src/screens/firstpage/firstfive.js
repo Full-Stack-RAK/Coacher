@@ -4,16 +4,17 @@ import {
   View,
   Text,
   Dimensions,
-  TouchableOpacity,
+  TouchableOpacity
 } from "react-native";
 
 import MapView, { Marker, ProviderPropType } from "react-native-maps";
+import { Container } from "native-base";
 
 const { width, height } = Dimensions.get("window");
 
 const ASPECT_RATIO = width / height;
 const LATITUDE = 33.6449487;
-const LONGITUDE =  -117.8347771;
+const LONGITUDE = -117.8347771;
 const LATITUDE_DELTA = 0.0922;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 let id = 0;
@@ -52,7 +53,7 @@ class FirstFive extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <Container style={styles.container}>
         <MapView
           provider={this.props.provider}
           style={styles.map}
@@ -75,7 +76,7 @@ class FirstFive extends React.Component {
             <Text>Tap to create a marker of random color</Text>
           </TouchableOpacity>
         </View>
-      </View>
+      </Container>
     );
   }
 }
