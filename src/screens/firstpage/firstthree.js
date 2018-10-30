@@ -16,6 +16,7 @@ import {
   Text,
   DatePicker
 } from "native-base";
+// import { TimePickerAndroid } from "react-native";
 import styles from "./styles";
 import userBid from "../../utils/userBidAPI";
 
@@ -84,7 +85,7 @@ class FixedLabel extends Component {
                 timeZoneOffsetInMinutes={undefined}
                 modalTransparent={false}
                 animationType={"fade"}
-                androidMode={"default"}
+                androidMode={"spinner"}
                 placeHolderText="Select date"
                 textStyle={{ color: "green" }}
                 placeHolderTextStyle={{ color: "#d3d3d3" }}
@@ -94,11 +95,18 @@ class FixedLabel extends Component {
             </Item>
             <Item fixedLabel title="TimePickerAndroid">
               <Label>Schedule Time:</Label>
-              <Input />
+              <Input>
+               {/* <TimePickerAndroid
+               hour={0}
+               minute={0}
+               is24hour={false}
+               mode={"clock"}
+               /> */}
+              </Input>
             </Item>
             <Item fixedLabel>
               <Label>Where:</Label>
-              <Input 
+              <Input
               value={this.state.address}
               onChangeText={(address) => this.setState({ address })}
               />

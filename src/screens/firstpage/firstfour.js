@@ -1,5 +1,6 @@
-import React from "react";
-import { Container,
+import React, { Component } from "react";
+import {
+  Container,
   Header,
   Title,
   Content,
@@ -9,10 +10,22 @@ import { Container,
   Text,
   Left,
   Right,
-  Body } from "expo";
-import styles from "../anatomy/styles";
+  Body
+} from "native-base";
+import styles from "./styles";
 
-export default class FirstFour extends React.Component {
+class FirstFour extends Component {
+  constructor() {
+    super();
+    this.state = {
+      name: "Kenny",
+      email: "kenster@gmail.com",
+      signedInID: "5bd754800a23b156885a0452",
+      userBidTitle: "",
+      address: "",
+      dateRequested: null
+    };
+  }
   render() {
     return (
       <Container style={styles.container}>
@@ -33,16 +46,26 @@ export default class FirstFour extends React.Component {
             <Text>Bid Title</Text>
           </ListItem>
           <ListItem>
-            <Text>Scheduled Date</Text>
+            <Text>Email</Text>
           </ListItem>
           <ListItem>
-            <Text>Scheduled Time</Text>
+            <Text>Name</Text>
+          </ListItem>
+          <ListItem>
+            <Text>User ID</Text>
+          </ListItem>
+          <ListItem>
+            <Text>Address</Text>
           </ListItem>
           <ListItem last>
-            <Text>Location</Text>
+            <Text>Date Requested?</Text>
           </ListItem>
+
+         
         </Content>
       </Container>
     );
   }
 }
+
+export default FirstFour;
