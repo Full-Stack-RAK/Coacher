@@ -13,12 +13,7 @@ export default {
   deleteUserBid: function(id) {
     return axios.delete(url + "/" + id);
   },
-<<<<<<< HEAD
-  saveUserBid: function(userData) {
-    return axios.post(url, userData);
-=======
   saveUserBid: function(userBidData) {
     return axios.post(url, userBidData)
->>>>>>> origin/ken
   }
 };
