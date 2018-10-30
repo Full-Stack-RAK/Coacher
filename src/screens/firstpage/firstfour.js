@@ -13,17 +13,19 @@ import {
   Body
 } from "native-base";
 import styles from "./styles";
+import db from "../../utils/mentorBidAPI";
 
 class FirstFour extends Component {
   constructor() {
-    super();
-    this.state = {
-      name: "Kenny",
-      email: "kenster@gmail.com",
-      signedInID: "5bd754800a23b156885a0452",
-      userBidTitle: "",
-      address: "",
-      dateRequested: null
+    state = {
+      results: []
+    };
+    componentDidMount() {
+      this.getUserBids();
+    }
+    getUserBids = () => {
+    db.getMentorBids()
+      .then(res => this.setState({ res }));
     };
   }
   render() {
@@ -42,6 +44,7 @@ class FirstFour extends Component {
         </Header>
 
         <Content>
+          <List>
           <ListItem itemDivider>
             <Text>Bid Title</Text>
           </ListItem>
@@ -60,8 +63,8 @@ class FirstFour extends Component {
           <ListItem last>
             <Text>Date Requested?</Text>
           </ListItem>
-
-         
+          
+         </List>
         </Content>
       </Container>
     );

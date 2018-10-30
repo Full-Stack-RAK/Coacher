@@ -45,21 +45,13 @@ class RegularPicker extends Component {
 
         <Content>
           <Form>
-            <Picker
-              mode="dropdown"
-              style={{ width: undefined }}
-              placeholder="Select One"
-              placeholderStyle={{ color: "#2874F0" }}
-              note={false}
-              selectedValue={this.state.selected2}
-              onValueChange={this.onValueChange2.bind(this)}
-            >
-              <Item label="Wallet" value="key0" />
-              <Item label="ATM Card" value="key1" />
-              <Item label="Debit Card" value="key2" />
-              <Item label="Credit Card" value="key3" />
-              <Item label="Net Banking" value="key4" />
-            </Picker>
+          <Picker
+            selectedValue={this.state.language}
+            style={{ height: 50, width: 100 }}
+            onValueChange={(itemValue, itemIndex) => this.setState({language: itemValue})}>
+            <Picker.Item label="Java" value="java" />
+            <Picker.Item label="JavaScript" value="js" />
+          </Picker>
           </Form>
         </Content>
       </Container>

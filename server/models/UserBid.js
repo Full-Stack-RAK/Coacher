@@ -8,7 +8,7 @@ const userBidSchema = new Schema({
   datePosted: { type: Date, default: Date.now},
   address: { type: String, required: true },
   userID: { type: String, required: true },
-  dateRequested: { type: Date, required: true }
+  // dateRequested: { type: Date, required: true }
 });
 
 const UserBid = mongoose.model("UserBid", userBidSchema);
