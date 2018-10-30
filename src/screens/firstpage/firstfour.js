@@ -45,31 +45,26 @@ class FirstFour extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>User Bids</Title>
+            <Title>Mentor Bids</Title>
           </Body>
           <Right />
         </Header>
 
         <Content>
-        <FlatList
-            data={this.state.mentorBidData}
-            extraData={this.state}
-            keyExtractor={(item, index) => String(index)}
-            renderItem={({ item, index }) => {
-              return (
-  
-                <ListItem
-                  selected={this.state.selected === item}
-                  onPress={() => this.setState({ selected: item })}
-                >
+          <List>
+            {this.state.mentorBidData.map(bid => (
+              <ListItem
+                key={bid._id}
+                onPress={() => this.props.navigation.navigate("FirstSix")}
+              >
                 <Left>
                   <Text>
-                    {`${item.name} : ${item.email} `}
+                    {bid.name} : {bid.email}
                   </Text>
                 </Left>
                 <Right>
                   <Text>
-                    { `Date ${item.dateBid}` }
+                    {Date(bid.dateBid)}
                   </Text>
                 </Right>
               </ListItem>

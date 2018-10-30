@@ -14,7 +14,8 @@ import {
   Icon,
   Form,
   Text,
-  DatePicker
+  DatePicker,
+  Picker
 } from "native-base";
 import styles from "./styles";
 import userBid from "../../utils/userBidAPI";
@@ -24,10 +25,11 @@ class FixedLabel extends Component {
   constructor() {
     super();
     this.state = {
-      name: "Kenny",
-      email: "kenster@gmail.com",
-      signedInID: "5bd754800a23b156885a0452",
+      name: "allen",
+      email: "allen@gmail.com",
+      signedInID: "5bd7803494caaa026ced7188",
       userBidTitle: "",
+      time: "",
       address: "",
       dateRequested: null
     };
@@ -84,7 +86,7 @@ class FixedLabel extends Component {
                 timeZoneOffsetInMinutes={undefined}
                 modalTransparent={false}
                 animationType={"fade"}
-                androidMode={"default"}
+                androidMode={"spinner"}
                 placeHolderText="Select date"
                 textStyle={{ color: "green" }}
                 placeHolderTextStyle={{ color: "#d3d3d3" }}
@@ -92,13 +94,16 @@ class FixedLabel extends Component {
                 onDateChange={(dateRequested) => this.setState({ dateRequested })}
               />
             </Item>
-            <Item fixedLabel title="TimePickerAndroid">
+            <Item fixedLabel>
               <Label>Schedule Time:</Label>
-              <Input />
+              <Input
+              value={this.state.time}
+              onChangeText={(time) => this.setState({ time })}
+              />
             </Item>
             <Item fixedLabel>
               <Label>Where:</Label>
-              <Input 
+              <Input
               value={this.state.address}
               onChangeText={(address) => this.setState({ address })}
               />
