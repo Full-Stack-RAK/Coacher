@@ -56,15 +56,12 @@ class FirstFour extends Component {
               <ListItem key={bid._id}>
                 <Left>
                   <Text>
-                    {bid.name}
-                  </Text>
-                  <Text>
-                    {bid.email}
+                    {bid.name} : {bid.email}
                   </Text>
                 </Left>
                 <Right>
                   <Text>
-                    date posted: {Date(bid.dateBid)}
+                    {Date(bid.dateBid)}
                   </Text>
                 </Right>
               </ListItem>
