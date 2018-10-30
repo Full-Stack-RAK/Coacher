@@ -27,7 +27,7 @@ class FirstSix extends Component {
   }
 
   callMentorBids() {
-    mentorbids.getMentorBid(this.props)
+    mentorbids.getMentorBid(this.props.navigation.state.params.itemID)
       .then(res => this.setState({ mentorBidData: res.data }))
       .catch(err => console.log(err));
   };

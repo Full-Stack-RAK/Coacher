@@ -55,7 +55,7 @@ class FirstFour extends Component {
             {this.state.mentorBidData.map(bid => (
               <ListItem
                 key={bid._id}
-                onPress={() => this.props.navigation.navigate("FirstSix")}
+                onPress={() => this.props.navigation.navigate("FirstSix", { itemID: bid._id} )}
               >
                 <Left>
                   <Text>
