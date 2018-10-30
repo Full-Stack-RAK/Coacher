@@ -1,5 +1,5 @@
 import axios from "axios";
-const url = "http://192.168.1.182:3210/api/users";
+const url = "http://169.234.99.128:3210/api/users";
 export default {
 // use these functions on the correct pages to get what you want done
   getUsers: function() {
