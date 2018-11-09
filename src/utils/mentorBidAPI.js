@@ -10,8 +10,8 @@ export default {
     return axios.get(url + "/" + id);
   },
 
-  updateMentorBid: function(id) {
-    return axios.put(url + "/" + id);
+  updateMentorBid: function(id, mentorData) {
+    return axios.put(url + "/" + id, mentorData);
   },
 
   deleteMentorBid: function(id) {
