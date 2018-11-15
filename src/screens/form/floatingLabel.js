@@ -51,7 +51,7 @@ class FloatingLabel extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (password === passwordCheck) {
+    if (this.state.password === this.state.passwordCheck) {
       if (this.state.name && this.state.email && this.state.isUser && this.state.password) {
         user.saveUser({
           name: this.state.name,
@@ -72,7 +72,7 @@ class FloatingLabel extends Component {
           .then(() => this.props.navigation.navigate("FixedLabel"))
           .catch(err => console.log(err));
       }
-    } else if (!password === passwordCheck) {
+    } else if (!this.state.password === this.state.passwordCheck) {
       Toast.show({
         text: "Passwords don't match!",
         buttonText: "Okay"

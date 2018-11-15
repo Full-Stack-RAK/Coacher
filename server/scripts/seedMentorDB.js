@@ -11,12 +11,14 @@ const mentorSeed = [
     {
         name: "Randy",
         email: "RandalTheVandal@gmail.com",
-        date: new Date(Date.now())
+        date: new Date(Date.now()),
+        password: "12345"
     },
     {
         name: "Viet",
         email: "MadLad@gmail.com",
-        date: new Date(Date.now())
+        date: new Date(Date.now()),
+        password: "abcde"
     }
 ];
 

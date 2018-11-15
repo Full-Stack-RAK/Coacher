@@ -10,6 +10,10 @@ export default {
     return axios.get(url + "/" + id);
   },
 
+  getUserByName: function(name) {
+    return axios.get(url + "/" + name);
+  },
+
   deleteUser: function(id) {
     return axios.delete(url + "/" + id);
   },

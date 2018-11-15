@@ -11,7 +11,8 @@ const userSeed = [
   {
     name: "Kenny",
     email: "kenster@gmail.com",
-    date: new Date(Date.now())
+    date: new Date(Date.now()),
+    password: "Kenny"
   }
 ];
 
