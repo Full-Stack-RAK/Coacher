@@ -13,4 +13,8 @@ router
   .put(mentorController.update)
   .delete(mentorController.remove);
 
+router
+  .route("/name/:name")
+  .get(mentorController.findByName)
+
 module.exports = router;

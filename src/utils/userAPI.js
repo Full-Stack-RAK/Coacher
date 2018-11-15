@@ -11,7 +11,7 @@ export default {
   },
 
   getUserByName: function(name) {
-    return axios.get(url + "/" + name);
+    return axios.get(url + "/name/" + name);
   },
 
   deleteUser: function(id) {

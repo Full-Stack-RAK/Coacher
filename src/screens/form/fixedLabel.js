@@ -50,11 +50,38 @@ class FixedLabel extends Component {
     event.preventDefault();
     if (this.state.isUser) {
       this.setState.UserMentor = user.getUserByName(this.state.name);
-      if (UserMentor){
-        
+      if (this.state.UserMentor) {
+        if (this.state.UserMentor.password === this.state.password) {
+          () => this.props.navigation.navigate("FirstOne")
+        } else {
+          Toast.show({
+            text: "Wrong Username and Password Combination!",
+            buttonText: "Okay"
+          })
+        }
+      } else {
+        Toast.show({
+          text: "No Username match!",
+          buttonText: "Okay"
+        })
       }
     } else if (this.state.isMentor) {
-
+      this.setState.UserMentor = mentor.getUserByName(this.state.name);
+      if (this.state.UserMentor) {
+        if (this.state.UserMentor.password === this.state.password) {
+          () => this.props.navigation.navigate("FirstOne")
+        } else {
+          Toast.show({
+            text: "Wrong Username and Password Combination!",
+            buttonText: "Okay"
+          })
+        }
+      } else {
+        Toast.show({
+          text: "No Username match!",
+          buttonText: "Okay"
+        })
+      }
     }
   }
 

@@ -10,6 +10,10 @@ export default {
     return axios.get(url + "/" + id);
   },
 
+  getMentorByName: function(name) {
+    return axios.get(url + "/name/" + name);
+  },
+
   deleteMentor: function(id) {
     return axios.delete(url + "/" + id);
   },

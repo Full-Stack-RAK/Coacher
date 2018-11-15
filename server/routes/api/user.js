@@ -6,7 +6,6 @@ router.route("/")
   .get(userController.findAll)
   .post(userController.create);
 
-
 router
   .route("/:id")
   .get(userController.findById)
@@ -14,8 +13,7 @@ router
   .delete(userController.remove);
 
 router
-  .route("/:name")
+  .route("/name/:name")
   .get(userController.findByName)
-
 
 module.exports = router;
