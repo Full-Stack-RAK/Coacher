@@ -1,5 +1,5 @@
 import axios from "axios";
-const url = "http://169.234.99.128:3210/api/mentorBid";
+const url = "http://192.168.1.136:3210/api/mentorBid";
 export default {
 // use these functions on the correct pages to get what you want done
   getMentorBids: function() {
@@ -10,8 +10,8 @@ export default {
     return axios.get(url + "/" + id);
   },
 
-  updateMentorBid: function(id) {
-    return axios.put(url + "/" + id);
+  updateMentorBid: function(id, item) {
+    return axios.put(url + "/" + id, item);
   },
 
   deleteMentorBid: function(id) {

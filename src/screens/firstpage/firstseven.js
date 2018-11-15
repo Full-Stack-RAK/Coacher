@@ -34,7 +34,7 @@ class FirstSix extends Component {
   };
 
   acceptBid() {
-      mentorbids.updateMentorBid({ userAccepted: true })
+    mentorbids.updateMentorBid({ userAccepted: true })
   }
 
   render() {
@@ -43,7 +43,7 @@ class FirstSix extends Component {
 
     return (
       <Container style={styles.container}>
-        <Header>             
+        <Header>
           <Left>
             <Button transparent onPress={() => this.props.navigation.goBack()}>
               <Icon name="arrow-back" />
@@ -56,27 +56,24 @@ class FirstSix extends Component {
         </Header>
 
         <Content>
-        <Left>
-                  <Text>
-                    Name: {this.state.mentorBidData.name}   Email:    {this.state.mentorBidData.email}
-                  </Text>
-                </Left>
-                <Right>
-                  <Text>
-                    Posted: {Date(this.state.mentorBidData.datebid)}
-                  </Text>
-                  <Button onPress={() => this.acceptBid()}>
-                  <Text> Accept</Text>
-                  </Button>
-                </Right>
-                
-               
-                  
-     
+          <Left>
+            <Text>
+              Name: {this.state.mentorBidData.name}   Email:    {this.state.mentorBidData.email}
+            </Text>
+          </Left>
+          <Right>
+            <Text>
+              Posted: {Date(this.state.mentorBidData.datebid)}
+            </Text>
+            <Button onPress={() => this.acceptBid()}>
+              <Text> Accept</Text>
+            </Button>
+          </Right>
+
         </Content>
- 
+
       </Container>
-  
+
     );
   }
 }

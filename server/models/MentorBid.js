@@ -6,8 +6,8 @@ const mentorBidSchema = new Schema({
   mentorID: {type: String, required: true },
   name: { type: String, required: true },
   email: { type: String, required: true },
-  dateBid: { type: Date, default: Date.now},
-  userAccepted: {type: Boolean, default: false}
+  dateBid: { type: Date, default: Date.now },
+  userAccepted: { type: Boolean, default: false }
 });
 
 const MentorBid = mongoose.model("MentorBid", mentorBidSchema);

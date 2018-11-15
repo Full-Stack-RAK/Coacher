@@ -12,13 +12,15 @@ const mentorBidSeed = [
         name: "Viet",
         email: "MadLad@gmail.com",
         userID: "5bd754800a23b156885a0452",
-        mentorID: "5bd753e25b1708588002cfd1"
+        mentorID: "5bd753e25b1708588002cfd1",
+        userAccepted: false
     },
     {
         name: "Randy",
         email: "RandalTheVandal@gmail.com",
         userID: "5bd754800a23b156885a0452",
-        mentorID: "5bd753e25b1708588002cfd0"
+        mentorID: "5bd753e25b1708588002cfd0",
+        userAccepted: false
     }
 ];
 

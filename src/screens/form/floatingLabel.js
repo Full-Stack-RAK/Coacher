@@ -15,7 +15,8 @@ import {
   Form,
   Text,
   ListItem,
-  Radio
+  Radio,
+  Toast
 } from "native-base";
 import styles from "./styles";
 import user from "../../utils/userAPI";
@@ -28,6 +29,8 @@ class FloatingLabel extends Component {
     this.state = {
       name: "",
       email: "",
+      password: "",
+      passwordCheck: "",
       isUser: true,
       isMentor: false
     };
@@ -48,23 +51,37 @@ class FloatingLabel extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.name && this.state.email && this.state.isUser) {
-      user.saveUser({
-        name: this.state.name,
-        email: this.state.email,
-        date: Date.now
+    if (password === passwordCheck) {
+      if (this.state.name && this.state.email && this.state.isUser && this.state.password) {
+        user.saveUser({
+          name: this.state.name,
+          email: this.state.email,
+          password: this.state.password,
+          date: Date.now
+        })
+          .then(() => this.props.navigation.navigate("FixedLabel"))
+          .catch(err => console.log(err));
+      }
+      if (this.state.name && this.state.email && this.state.isMentor && this.state.password) {
+        mentor.saveMentor({
+          name: this.state.name,
+          email: this.state.email,
+          password: this.state.password,
+          date: Date.now
+        })
+          .then(() => this.props.navigation.navigate("FixedLabel"))
+          .catch(err => console.log(err));
+      }
+    } else if (!password === passwordCheck) {
+      Toast.show({
+        text: "Passwords don't match!",
+        buttonText: "Okay"
       })
-        .then(() => this.props.navigation.navigate("FixedLabel"))
-        .catch(err => console.log(err));
-    }
-    if (this.state.name && this.state.email && this.state.isMentor) {
-      mentor.saveMentor({
-        name: this.state.name,
-        email: this.state.email,
-        date: Date.now
+    } else {
+      Toast.show({
+        text: "Please complete the form!",
+        buttonText: "Okay"
       })
-        .then(() => this.props.navigation.navigate("FixedLabel"))
-        .catch(err => console.log(err));
     }
   };
 
@@ -91,15 +108,29 @@ class FloatingLabel extends Component {
               <Input
                 value={this.state.name}
                 onChangeText={(name) => this.setState({ name })}
-              // name="name"
               />
             </Item>
-            <Item floatingLabel last>
+            <Item floatingLabel>
               <Label>E-mail</Label>
               <Input
                 value={this.state.email}
                 onChangeText={(email) => this.setState({ email })}
-              // name="email"
+              />
+            </Item>
+            <Item floatingLabel>
+              <Label>Password</Label>
+              <Input
+                secureTextEntry
+                value={this.state.password}
+                onChangeText={(password) => this.setState({ password })}
+              />
+            </Item>
+            <Item floatingLabel last>
+              <Label>Retype Password</Label>
+              <Input
+                secureTextEntry
+                value={this.state.passwordCheck}
+                onChangeText={(passwordCheck) => this.setState({ passwordCheck })}
               />
             </Item>
           </Form>

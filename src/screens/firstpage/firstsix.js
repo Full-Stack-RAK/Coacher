@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import {
-  button,
   Container,
   Header,
   Title,
@@ -34,17 +33,17 @@ class FirstSix extends Component {
   };
 
   acceptBid() {
-      mentorbids.updateMentorBid(this.props.navigation.state.params.itemID, { userAccepted: true })
+    mentorbids.updateMentorBid(this.props.navigation.state.params.itemID, { userAccepted: true })
       .then(res => console.log(this.state))
   }
 
   render() {
-    
+
     console.log(this.state)
 
     return (
       <Container style={styles.container}>
-        <Header>             
+        <Header>
           <Left>
             <Button transparent onPress={() => this.props.navigation.goBack()}>
               <Icon name="arrow-back" />
@@ -57,27 +56,24 @@ class FirstSix extends Component {
         </Header>
 
         <Content>
-        <Left>
-                  <Text>
-                    Name: {this.state.mentorBidData.name}   Email:    {this.state.mentorBidData.email}
-                  </Text>
-                </Left>
-                <Right>
-                  <Text>
-                    Posted: {Date(this.state.mentorBidData.datebid)}
-                  </Text>
-                  <Button onPress={() => this.acceptBid()}>
-                  <Text> Accept</Text>
-                  </Button>
-                </Right>
-                
-               
-                  
-     
+          <Left>
+            <Text>
+              Name: {this.state.mentorBidData.name}   Email:    {this.state.mentorBidData.email}
+            </Text>
+          </Left>
+          <Right>
+            <Text>
+              Posted: {Date(this.state.mentorBidData.datebid)}
+            </Text>
+            <Button onPress={() => this.acceptBid()}>
+              <Text> Accept</Text>
+            </Button>
+          </Right>
+
         </Content>
- 
+
       </Container>
-  
+
     );
   }
 }
